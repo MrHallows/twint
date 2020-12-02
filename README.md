@@ -1,10 +1,11 @@
 # TWINT - Twitter Intelligence Tool
+
 ![2](https://i.imgur.com/iaH3s7z.png)
 ![3](https://i.imgur.com/hVeCrqL.png)
 
 [![PyPI](https://img.shields.io/pypi/v/twint.svg)](https://pypi.org/project/twint/) [![Build Status](https://travis-ci.org/twintproject/twint.svg?branch=master)](https://travis-ci.org/twintproject/twint) [![Python 3.6|3.7|3.8](https://img.shields.io/badge/Python-3.6%2F3.7%2F3.8-blue.svg)](https://www.python.org/download/releases/3.0/) [![GitHub license](https://img.shields.io/github/license/haccer/tweep.svg)](https://github.com/haccer/tweep/blob/master/LICENSE) [![Downloads](https://pepy.tech/badge/twint)](https://pepy.tech/project/twint) [![Downloads](https://pepy.tech/badge/twint/week)](https://pepy.tech/project/twint/week) [![Patreon](https://img.shields.io/endpoint.svg?url=https:%2F%2Fshieldsio-patreon.herokuapp.com%2Ftwintproject)](https://www.patreon.com/twintproject) ![](https://img.shields.io/twitter/follow/noneprivacy.svg?label=Follow&style=social) 
 
->No authentication. No API. No limits.
+> No authentication. No API. No limits.
 
 Twint is an advanced Twitter scraping tool written in Python that allows for scraping Tweets from Twitter profiles **without** using Twitter's API.
 
@@ -12,17 +13,21 @@ Twint utilizes Twitter's search operators to let you scrape Tweets from specific
 
 Twint also makes special queries to Twitter allowing you to also scrape a Twitter user's followers, Tweets a user has liked, and who they follow **without** any authentication, API, Selenium, or browser emulation.
 
-## tl;dr Benefits
+## TL;DR Benefits
+
 Some of the benefits of using Twint vs Twitter API:
+
 - Can fetch almost __all__ Tweets (Twitter API limits to last 3200 Tweets only);
 - Fast initial setup;
 - Can be used anonymously and without Twitter sign up;
 - **No rate limitations**.
 
 ## Limits imposed by Twitter
+
 Twitter limits scrolls while browsing the user timeline. This means that with `.Profile` or with `.Favorites` you will be able to get ~3200 tweets.
 
 ## Requirements
+
 - Python 3.6;
 - aiohttp;
 - aiodns;
@@ -41,6 +46,7 @@ Twitter limits scrolls while browsing the user timeline. This means that with `.
 ## Installing
 
 **Git:**
+
 ```bash
 git clone --depth=1 https://github.com/twintproject/twint.git
 cd twint
@@ -48,6 +54,7 @@ pip3 install . -r requirements.txt
 ```
 
 **Pip:**
+
 ```bash
 pip3 install twint
 ```
@@ -59,11 +66,13 @@ pip3 install --user --upgrade git+https://github.com/twintproject/twint.git@orig
 ```
 
 **Pipenv**:
+
 ```bash
 pipenv install git+https://github.com/twintproject/twint.git#egg=twint
 ```
 
 ## CLI Basic Examples and Combos
+
 A few simple examples to help you understand the basics:
 
 - `twint -u username` - Scrape all the Tweets of a *user* (doesn't include **retweets** but includes **replies**).
@@ -105,6 +114,7 @@ c.Search = "great"
 # Run
 twint.run.Search(c)
 ```
+
 > Output
 
 `955511208597184512 2018-01-22 18:43:19 GMT <now> pineapples are the best fruit`
@@ -125,6 +135,7 @@ twint.run.Search(c)
 ```
 
 ## Storing Options
+
 - Write to file;
 - CSV;
 - JSON;
@@ -136,6 +147,7 @@ twint.run.Search(c)
 Details on setting up Elasticsearch with Twint is located in the [wiki](https://github.com/twintproject/twint/wiki/Elasticsearch).
 
 ## Graph Visualization
+
 ![graph](https://i.imgur.com/EEJqB8n.png)
 
 [Graph](https://github.com/twintproject/twint/wiki/Graph) details are also located in the [wiki](https://github.com/twintproject/twint/wiki/Graph).
@@ -145,9 +157,11 @@ We are developing a Twint Desktop App.
 ![4](https://i.imgur.com/DzcfIgL.png)
 
 ## FAQ
+
 > I tried scraping tweets from a user, I know that they exist but I'm not getting them
 
 Twitter can shadow-ban accounts, which means that their tweets will not be available via search. To solve this, pass `--profile-full` if you are using Twint via CLI or, if are using Twint as module, add `config.Profile_full = True`. Please note that this process will be quite slow.
+
 ## More Examples
 
 #### Followers/Following
@@ -164,7 +178,7 @@ Twitter can shadow-ban accounts, which means that their tweets will not be avail
 
 `twint -u username --following --user-full`
 
-#### userlist
+#### Userlist
 
 > To get only user info of user
 
@@ -175,7 +189,7 @@ Twitter can shadow-ban accounts, which means that their tweets will not be avail
 `twint --userlist inputlist --user-full`
 
 
-#### tweet translation (experimental)
+#### Tweet Translation (experimental)
 
 > To get 100 english tweets and translate them to italian
 
@@ -198,9 +212,11 @@ twint.run.Search(c)
 ```
 
 Notes:
+
 - [Google translate has some quotas](https://cloud.google.com/translate/quotas)
 
-## Featured Blog Posts:
+## Featured Blog Posts
+
 - [How to use Twint as an OSINT tool](https://pielco11.ovh/posts/twint-osint/)
 - [Basic tutorial made by Null Byte](https://null-byte.wonderhowto.com/how-to/mine-twitter-for-targeted-information-with-twint-0193853/)
 - [Analyzing Tweets with NLP in minutes with Spark, Optimus and Twint](https://towardsdatascience.com/analyzing-tweets-with-nlp-in-minutes-with-spark-optimus-and-twint-a0c96084995f)
